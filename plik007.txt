@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int symbol_newtona(int n,int k)
+{
+    int pomocnicza;
+
+    if(k==0||k==n)
+        return 1;
+    else
+    {
+        pomocnicza=symbol_newtona(n-1,k-1)+symbol_newtona(n-1,k);
+        return pomocnicza;
+    }
+}
+
+int main()
+{
+    int n,k,wynik;
+
+    printf("Podaj (gorna) liczbe symbolu newtona: ");
+    scanf("%i",&n);
+    printf("Podaj (dolna) liczbe symbolu newtona: ");
+    scanf("%i",&k);
+
+    wynik=symbol_newtona(n,k);
+    printf("%i",wynik);
+}
