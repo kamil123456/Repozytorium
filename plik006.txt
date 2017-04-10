@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int ciag_Fibbonaciego(int n)
+{
+    int pomocnicza;
+
+    if(n==0)
+        return 0;
+    if(n==1)
+        return 1;
+
+    if(n>1)
+    {
+        pomocnicza = ciag_Fibbonaciego(n-1) + ciag_Fibbonaciego (n-2);
+        return pomocnicza;
+    }
+}
+
+int main()
+{
+    int a,b,n,wynik;
+    a=0;
+    b=1;
+
+    printf("Ktory element ciagu Fibonacciego chcesz obliczyc: ");
+    scanf("%i",&n);
+
+    wynik=ciag_Fibbonaciego(n);
+
+    printf("%i\n",wynik);
+}
