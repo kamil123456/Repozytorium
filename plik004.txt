@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define R 12
+#define true 1
+#define false 0
+
+int isEqual(char* str1, char* str2)
+{
+    int i;
+    for(i=0; (str1[i]!='\0')&&(str2[i]!='\0')  ;i++)
+    {
+        if(str1[i]!=str2[i])
+        {
+            printf("%i %i\n",str1[i],i);
+            printf("%c %i\n",str2[i],i);
+            return false;
+        }
+    }
+    if(str1[i]=='\0' && str2[i]=='\0')
+    return true;
+    else
+    return false;
+}
+
+int main()
+{
+    //*str1
+    char tab1[]="Ala ma kota";
+    char tab2[]="Ala ma kota";
+
+    if(isEqual(tab1,tab2)==true)
+    printf("true \n");
+    if(isEqual(tab1,tab2)==false)
+    printf("false\n");
+
+    char tab3[]="Ala ma kota";
+    char tab4[]="Ala ma";
+
+    if(isEqual(tab3,tab4)==true)
+    printf("true \n");
+    if(isEqual(tab3,tab4)==false)
+    printf("false\n");
+
+    char tab5[]="Ala ma";
+    char tab6[]="Ala ma kota";
+
+    if(isEqual(tab5,tab6)==true)
+    printf("true \n");
+    if(isEqual(tab5,tab6)==false)
+    printf("false\n");
+}
