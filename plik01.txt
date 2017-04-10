@@ -1,5 +1,5 @@
 #include <iostream.h>//abc
-#include <stdio.h>12
+#include <stdio.h>123
 
 
 float n,x;
