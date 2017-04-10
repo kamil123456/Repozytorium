@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int binarna(int liczba)
+{
+    if(liczba==0)
+        printf("0");
+
+    if(liczba==1)
+        printf("1");
+
+    else
+    {
+        binarna(liczba/2);
+        
+        if(liczba%2==0)
+            printf("0");
+        else
+            printf("1");
+    }
+
+}
+
+int main()
+{
+    int liczba;
+    printf("Podaj liczbe ktora chcesz zamienic na postac binarna: ");
+    scanf("%i",&liczba);
+
+    if(liczba<0)
+    printf("Podales zla liczbe");
+    else
+    binarna(liczba);
+}
