@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+float potega(float r,int n)
+{
+    float pomocnicza;
+    if(n==0)
+        return 1;
+    if(n==1)
+        return r;
+    if(n>1)
+    {
+        pomocnicza=potega(r,n-1)*r;
+        return pomocnicza;
+    }
+}
+
+int main()
+{
+    float r,wynik;
+    int n;
+
+    printf("Podaj liczbe rzeczywista ktorej potege chcesz obliczyc: ");
+    scanf("%f",&r);
+    printf("Podaj potege do ktorej chcesz podniesc liczbe: ");
+    scanf("%i",&n);
+
+    wynik=potega(r,n);
+    printf("%f",wynik);
+}
