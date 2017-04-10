@@ -1,0 +1,38 @@
+#include<stdio.h>
+#define R 10
+
+char * isElement(char *tab, char znak)
+{
+    char*wskaznik;
+    int i;
+
+    for(i=0;tab[i]!='\0';i++)
+    {
+        if(tab[i]==znak)
+        {
+            wskaznik=&tab[i];
+            return wskaznik;
+        }
+    }
+    wskaznik=&tab[i];
+    return wskaznik;
+}
+
+int main()
+{
+    char literka='a';
+    char napis[R];
+    char a;
+
+    fgets(napis, R, stdin);
+
+    a=*isElement(napis,literka);
+    if (a!='\0')
+    {
+        printf("%c",a);
+    }
+    if (a=='\0')
+    {
+        printf("W slowie nie ma takiej literki");
+    }
+}
