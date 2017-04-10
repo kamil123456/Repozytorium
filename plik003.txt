@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include<math.h>
+
+int funkcja_kwadrat(int a,int b,int c,double *x1,double *x2)
+{
+    int delta;
+
+    delta=b*b-4*a*c;
+    if(delta<0)
+    {
+        return 0;
+    }
+    else
+    {
+        if(delta==0)
+        {
+            *x1=(-b)/(2*a);
+            return 1;
+        }
+        else
+        {
+            *x1=((-b+sqrt(delta))/(2*a));
+            *x2=((-b-sqrt(delta))/(2*a));
+            return 2;
+        }
+    }
+}
+
+int main()
+{
+    int a,b,c,ile;
+    double b1=0,b2=0;
+    printf("Podaj wspolczynnik a: ");
+    scanf("%i",&a);
+    printf("Podaj wspolczynnik b: ");
+    scanf("%i",&b);
+    printf("Podaj wspolczynnik c: ");
+    scanf("%i",&c);
+
+    ile=funkcja_kwadrat(a,b,c,&b1,&b2);
+
+    if(ile==2)
+    {
+        printf("%f ",b1);
+        printf("%f ",b2);
+    }
+    else
+    {
+        if(ile==1)
+        {
+            printf("%f ",b1);
+        }
+    }
+}
