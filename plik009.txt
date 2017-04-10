@@ -1,0 +1,35 @@
+#include <stdio.h>
+#define R 20
+
+int palindrom(int rozmiar,char* napis)
+{
+    if(rozmiar==0||rozmiar==1)
+        return 1;
+
+    if(rozmiar>1)
+    {
+        if(napis[0]==napis[rozmiar-1])
+        {
+            return palindrom(rozmiar-2,++napis);
+        }
+        else
+            return 0;
+    }
+}
+
+int main()
+{
+    int rozmiar=0,i,wynik;
+    char napis[R];
+    printf("Podaj swoj napis: ");
+    fgets(napis, R, stdin);
+
+    for(i=0;napis[i]!='\0';i++)
+        rozmiar++;
+
+    rozmiar--;
+    //printf("%i aha",rozmiar);
+
+    wynik=palindrom(rozmiar,napis);
+    printf("%i",wynik);
+}
