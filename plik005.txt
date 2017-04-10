@@ -1,0 +1,50 @@
+#include<stdio.h>
+#define R 2
+
+double* funkcja_kwadrat(int a,int b,int c,int rozmiar)
+{
+    int delta;
+    double* tab1 = (double*)malloc(sizeof(*tab1) * rozmiar);
+
+    delta=b*b-4*a*c;
+    if(delta<0)
+    {
+        return NULL;
+    }
+    else
+    {
+        if(delta==0)
+        {
+            tab1[0]=(-b)/(2*a);
+            tab1[1]=(-b)/(2*a);
+            return tab1;
+        }
+        else
+        {
+            tab1[0]=((-b+sqrt(delta))/(2*a));
+            tab1[1]=((-b-sqrt(delta))/(2*a));
+            return tab1;
+        }
+    }
+}
+
+int main()
+{
+    int a,b,c,i;
+    printf("Podaj wspolczynnik a: ");
+    scanf("%i",&a);
+    printf("Podaj wspolczynnik b: ");
+    scanf("%i",&b);
+    printf("Podaj wspolczynnik c: ");
+    scanf("%i",&c);
+
+    double*tab=funkcja_kwadrat(a,b,c,R);
+
+    if(tab == NULL) printf("brak rozwiazan");
+    else
+    {
+        printf("%f ",tab[0]);
+        printf("%f ",tab[1]);
+    }
+    free(tab);
+}
