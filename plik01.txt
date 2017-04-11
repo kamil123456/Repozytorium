@@ -1,6 +1,6 @@
 #include <iostream.h>//abc
 #include <stdio.h>
-12345
+123456
 
 float n,x;
 
